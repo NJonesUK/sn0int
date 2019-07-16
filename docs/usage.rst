@@ -256,3 +256,14 @@ You can reverse this using the scope command::
 .. hint::
    All entities have this field, you can refer to it in queries using
    ``unscoped=1``.
+
+Exporting Data
+--------------
+
+Until more fully featured data export functionality is implemented, data can be exported in JSON format using the following command from the command line:
+
+```
+sn0int select --json [QUERY] | tr '\n' ',' | sed 's/^/[/' | sed 's/.$/]/'
+```
+
+The `[QUERY]` field follows the same query format as used in the `select` command within the sn0int CLI.
